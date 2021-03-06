@@ -5,9 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header>
+        <h1>My personal library of books</h1>
+        <button id="add" onclick="toggleForm()">New Book</button>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <section class="library">
+            <div>
+
+            </div>
+        </section>
+        <section class="popup hidden">
+            <div class="blocker" onclick="toggleForm()">
+
+            </div>
+            <div class="popup-content">
+                <form action="" id="addBook">
+                    <label>Title</label>
+                    <input type="text" id="title">
+                    <label>Author</label>
+                    <input type="text" id="author">
+                    <label>Pages</label>
+                    <input type="number" id="pages">
+                    <input type="submit">
+                </form>
+            </div>
+        </section>
+    </main>
+
 
 
     <script src="app.js"></script>

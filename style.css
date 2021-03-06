@@ -3,3 +3,114 @@
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/*header*/
+body {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+header {
+    margin: 15px 0;
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+header #add {
+    width: 100%;
+    height: 40px;
+    border: none;
+    display: inline-block;
+    outline: none;
+    font-size: 16px;
+    background-color:  #1abc9c;
+    color: white;
+}
+
+header #add:hover {
+    background-color: #16a085;
+}
+
+
+hr {
+    border: 0.5px solid #ccc;
+}
+
+/*Main section*/
+main {
+    margin-top: 15px;
+}
+
+
+.library {
+    display: grid;
+}
+
+
+
+/*Pop Up Form*/
+.blocker {
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(50px);  
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup-content {
+    width: 300px;
+    height: 330px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-165px);
+}
+
+form input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+form input[type=text]:focus, input[type=number]:focus {
+    text-decoration: none;
+    outline: none;
+    border: 1px solid #1abc9c;
+}
+
+form input[type=submit] {
+    width: 100%;
+    background-color:  #1abc9c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type=submit]:hover {
+    background-color: #16a085;
+}
+
+.hidden {
+    visibility: hidden;
+}
