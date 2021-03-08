@@ -28,6 +28,7 @@ header #add {
     font-size: 16px;
     background-color:  #1abc9c;
     color: white;
+    border-radius: 10px;
 }
 
 header #add:hover {
@@ -47,8 +48,26 @@ main {
 
 .library {
     display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-gap: 30px;
 }
 
+.library .book {
+    display: grid;
+    border: 1px solid #ccc;
+    min-height: 250px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.library .book h1 {
+    font-size: 14px;
+}
+.library .book img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 
 
 /*Pop Up Form*/

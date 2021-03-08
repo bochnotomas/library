@@ -38,6 +38,12 @@ function addBookToLibrary(author, title, n) {
     myLibrary.push(book)
 }
 
+//removing a book
+function removeBookFromLibrary(data) {
+    delete myLibrary[data]
+    displayLibrary()
+}
+
 
 
 //dummy data
@@ -49,8 +55,8 @@ addBookToLibrary("Don Quixote", "Miguel de Cervantes", 400)
 //displaying list of books
 function displayLibrary() {
     listOfBooks.innerHTML = ""
-    myLibrary.forEach(book => {
-        listOfBooks.innerHTML += `<div> ${book.title}, ${book.author}, ${book.numberOfPages} </div>`
+    myLibrary.forEach((book, index) => {
+        listOfBooks.innerHTML += `<div class="book"> <h1>${book.title}</h1> <h2>${book.author}</h2> <p>${book.numberOfPages}pg</p> <img onclick="removeBookFromLibrary(${index})" src="/assets/images/dust-bin-pngrepo-com.png" alt="bin"> </div>`
     })
 }
 
