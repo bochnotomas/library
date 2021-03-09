@@ -3,6 +3,9 @@ const popup = document.querySelector(".popup")
 let myLibrary = []
 let book
 
+//adding array to local Storage
+
+
 //book object
 function Book(author, title, numberOfPages, read) {
     this.author = author
@@ -35,7 +38,7 @@ form.addEventListener("submit", e => {
 //adding a book object to library array function
 function addBookToLibrary(author, title, n) {
     book = new Book(author, title, n, false)
-    myLibrary.push(book)
+    myLibrary.unshift(book)
 }
 
 //removing a book
@@ -43,7 +46,6 @@ function removeBookFromLibrary(data) {
     delete myLibrary[data]
     displayLibrary()
 }
-
 
 
 //dummy data
@@ -56,9 +58,19 @@ addBookToLibrary("Don Quixote", "Miguel de Cervantes", 400)
 function displayLibrary() {
     listOfBooks.innerHTML = ""
     myLibrary.forEach((book, index) => {
-        listOfBooks.innerHTML += `<div class="book"> <h1>${book.title}</h1> <h2>${book.author}</h2> <p>${book.numberOfPages}pg</p> <img onclick="removeBookFromLibrary(${index})" src="/assets/images/dust-bin-pngrepo-com.png" alt="bin"> </div>`
+        listOfBooks.innerHTML += `<div class="book"> <h1>${book.title}</h1> <h2>${book.author}</h2> <p>${book.numberOfPages}pg</p> <img onclick="removeBookFromLibrary(${index})" src="/assets/images/dust-bin-pngrepo-com.png" alt="bin"> <input type="checkbox" onclick="changeRead(${index})"> </div>`
     })
 }
 
+
+//changing read state
+function changeRead(index) {
+    let book = myLibrary[index]
+    if (book.read) {
+        book.read = false
+    } else {
+        book.read = true
+    }
+}
 
 displayLibrary()

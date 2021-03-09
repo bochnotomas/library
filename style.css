@@ -69,7 +69,42 @@ main {
     cursor: pointer;
 }
 
+/*Checkbox styling*/
 
+input[type="checkbox"] {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0,0,.2);
+    transition: .5s;
+}
+
+input[type="checkbox"]:checked {
+    background: #16a085;
+
+}
+
+input[type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0, .2);
+    transition: .5s;
+}
+
+input:checked[type="checkbox"]:before {
+    left: 25px;
+}
 /*Pop Up Form*/
 .blocker {
     opacity: 0.8;
@@ -132,4 +167,41 @@ form input[type=submit]:hover {
 
 .hidden {
     visibility: hidden;
+}
+
+
+@media (max-width: 480px) {
+    /*BODY*/
+
+    body {
+        width: 350px;
+    }
+
+    .library {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /*BODY*/
+
+    body {
+        width: 350px;
+    }
+
+    .library {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media only screen and (min-device-width : 480px) and (max-device-width : 1024px) {
+    body {
+        width: 768px;
+
+    }
+
+    .library {
+        grid-template-columns: 1fr 1fr;
+    }
 }
