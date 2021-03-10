@@ -6,13 +6,17 @@ let book
 //adding array to local Storage
 
 
-//book object
-function Book(author, title, numberOfPages, read) {
-    this.author = author
-    this.title = title
-    this.numberOfPages = numberOfPages
-    this.read = read
+//book class
+
+class Book {
+    constructor(author, title, numberOfPages, read) {
+        this.author = author
+        this.title = title
+        this.numberOfPages = numberOfPages
+        this.read = read
+    }
 }
+
 
 //popup form code
 function toggleForm() {
